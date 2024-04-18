@@ -14,7 +14,7 @@ phases:
     commands:
       - rm -rf dist
       - ng build
-      - aws s3 sync dist/browser/ s3://continuousdeliverybucket/ --region us-east-1 --delete
+      - aws s3 sync dist/continuous_delivery_app/browser/ s3://continuousdeliverybucket/ --region us-east-1 --delete
   post_build:
     commands:
       - rm -rf /tmp/*
