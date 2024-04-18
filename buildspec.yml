@@ -8,7 +8,7 @@ phases:
       - cd /tmp
       - git clone https://github.com/gara2000/continuous_delivery_on_s3.git
       - cd continuous_delivery_on_s3
-      - npm init
+      - npm install
   build:
     commands:
       - rm -rf dist
