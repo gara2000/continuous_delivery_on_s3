@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:                                                                 
+      - cd /tmp
+      - git clone git@github.com:gara2000/continuous_delivery_on_s3.git
+      - cd continuous_delivery_on_s3
+      - npm init
+  build:
+    commands:
+      - rm -rf dist
+      - ng build
+      - aws s3 sync dist/browser/ s3://continuousdeliverybucket/ --region us-east-1 --delete
+  post_build:
+    commands:
+      - rm -rf /tmp/*
+      - echo Build completed on `date`
