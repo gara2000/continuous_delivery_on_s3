@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      docker: 18
+      nodejs: 20
     commands:                                                                 
       - cd /tmp
       - git clone git@github.com:gara2000/continuous_delivery_on_s3.git
