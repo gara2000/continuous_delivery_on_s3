@@ -8,11 +8,11 @@ phases:
       - cd /tmp
       - git clone https://github.com/gara2000/continuous_delivery_on_s3.git
       - cd continuous_delivery_on_s3
+      - npm install -g @angular/cli
       - npm install
   build:
     commands:
       - rm -rf dist
-      - pwd
       - ng build
       - aws s3 sync dist/browser/ s3://continuousdeliverybucket/ --region us-east-1 --delete
   post_build:
