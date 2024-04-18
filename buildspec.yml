@@ -6,7 +6,7 @@ phases:
       nodejs: 20
     commands:                                                                 
       - cd /tmp
-      - git clone git@github.com:gara2000/continuous_delivery_on_s3.git
+      - git clone https://github.com/gara2000/continuous_delivery_on_s3.git
       - cd continuous_delivery_on_s3
       - npm init
   build:
